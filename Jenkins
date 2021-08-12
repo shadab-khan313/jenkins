@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('checkout code'){
             steps{
-            git branch: 'master', credentialsId: 'dbd357eb-2e4c-4d89-9f5d-2c73d4b6397e', url: 'https://github.com/shadab-khan313/sample-java-app.git'
+            git branch: 'master', credentialsId: 'dbd357eb-2e4c-4d89-9f5d-2c73d4b6397e', url: 'https://github.com/kul-samples/java_sample_webapp.git'
             }
         }
         stage('Hello') {
