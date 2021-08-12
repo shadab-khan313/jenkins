@@ -5,6 +5,7 @@ pipeline {
         stage('checkout code'){
             steps{
             git branch: 'main', credentialsId: 'dbd357eb-2e4c-4d89-9f5d-2c73d4b6397e', url: 'https://github.com/kul-samples/sample-java-app.git'
+            }
         }
         stage('Hello') {
             steps {
