@@ -26,6 +26,16 @@ pipeline {
                 echo 'How are you?'
             }
         }
+        stage('Build Package') {
+  steps {
+    sh 'mvn clean package'
+  }
+  post {
+    always {
+      archive 'target/devops.war'
+    }
+  }
+}
         stage ('SAST'){
           parallel{
             stage ('sonar-scan'){
