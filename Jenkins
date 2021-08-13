@@ -30,11 +30,11 @@ pipeline {
             }
         }
          stage('push docker image') {
-            steps {
-                sh docker login -u ${dockeruser} -p ${dockerpassword}
-                push kulbhushanmayer/devops:latest
-            }
-        }
+         steps {
+            sh '''docker login -u ${dockeruser} -p ${dockerpassword}
+            docker push kulbhushanmayer/devops:latest'''
+         }
+       }
         stage('How are you?') {
             steps {
                 echo 'How are you?'
