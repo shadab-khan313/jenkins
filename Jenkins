@@ -4,6 +4,7 @@ pipeline {
     }
     tools {
        maven 'mvn_3.8.1'
+       docker 'Docker'
     }
     stages {
         stage('checkout code'){
@@ -16,9 +17,9 @@ pipeline {
             sh 'mvn clean package'
            }
         }
-        stage('Hello') {
+        stage('Docker Test') {
             steps {
-                echo 'Hello World'
+                sh 'docker --version'
             }
         }
         stage('How are you?') {
